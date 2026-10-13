@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amarelinha dos Padrões | Mundo MakerKids</title>
+<meta name="description" content="A amarelinha ganha uma regra de algoritmo: números pares passam, ímpares são &quot;bug&quot;.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: header('atividades')}"></div>
+
+<main class="wrap">
+  <a class="voltar" th:href="@{/atividades}">← Voltar para atividades</a>
+  <div class="ativ-head">
+    <span class="chip m">Matemática</span>
+    <h1>Amarelinha dos Padrões</h1>
+    <p>A amarelinha ganha uma regra de algoritmo: números pares passam, ímpares são "bug".</p>
+    <dl class="meta">
+      <div><dt>Conceito</dt><dd>Sequência e depuração</dd></div>
+      <div><dt>Tempo estimado</dt><dd>25 minutos</dd></div>
+      <div><dt>Idade</dt><dd>6 a 8 anos</dd></div>
+      <div><dt>Espaço</dt><dd>Pátio ou sala</dd></div>
+    </dl>
+    <div class="ativ-acoes">
+      <button class="btn-imprimir" onclick="window.print()" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Imprimir roteiro
+      </button>
+    </div>
+  </div>
+  <div class="layout">
+    <div>
+      <section>
+        <h2>Objetivo de aprendizagem</h2>
+        <p>Introduzir números pares e ímpares e o sequenciamento. As crianças seguem uma regra, encontram o erro e tentam de novo, como em um programa.</p>
+      </section>
+      <section>
+        <h2>Passo a passo</h2>
+        <ol class="passos">
+          <li><h3>Desenhe a amarelinha</h3><p>Faça uma amarelinha tradicional no chão e numere as casas em sequência.</p></li>
+          <li><h3>Defina a regra</h3><p>Anuncie o algoritmo: só é permitido pisar em casas com números pares.</p></li>
+          <li><h3>Pule seguindo a regra</h3><p>Cada criança percorre a amarelinha. Pisar em número ímpar acusa um "bug".</p></li>
+          <li><h3>Depure a jogada</h3><p>Quem errou volta ao início. Pergunte qual parte da regra não foi seguida e deixe tentar de novo.</p></li>
+          <li><h3>Troque de papel</h3><p>Cada criança inventa uma regra de padrão para os colegas, como pisar de três em três.</p></li>
+        </ol>
+      </section>
+      <section>
+        <div class="dica">
+          <strong>Dica para o professor</strong>
+          Chame o erro de "bug" com leveza. O objetivo é tentar de novo, não ser eliminado.
+        </div>
+      </section>
+    </div>
+    <aside>
+      <div class="caixa">
+        <h2>Materiais</h2>
+        <ul>
+          <li><strong>Giz</strong><span>Para desenhar a amarelinha numerada.</span></li>
+          <li><strong>Pátio ou calçada</strong><span>Um espaço livre para pular.</span></li>
+          <li><strong>Cartões de padrão</strong><span>Opcional, para a rodada final.</span></li>
+        </ul>
+      </div>
+      <div class="caixa conceito">
+        <h2>Conceito de computação</h2>
+        <p>Sequenciamento é organizar instruções em uma ordem para alcançar um objetivo. Depurar é achar e corrigir o erro.</p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<section class="aval" aria-labelledby="aval-t">
+  <div class="wrap">
+    <h2 id="aval-t">Você aplicou esta atividade?</h2>
+    <p class="mudo">Responda Sim ou Não. Leva menos de um minuto e ajuda a melhorar os roteiros.</p>
+    <form id="aval" data-slug="amarelinha" novalidate>
+      <fieldset class="q"><legend>As instruções do roteiro foram claras e fáceis de entender?</legend><div class="yn"><label><input type="radio" name="q0" value="sim"><span>Sim</span></label><label><input type="radio" name="q0" value="nao"><span>Não</span></label></div></fieldset>
+      <fieldset class="q"><legend>Os alunos demonstraram engajamento durante a dinâmica?</legend><div class="yn"><label><input type="radio" name="q1" value="sim"><span>Sim</span></label><label><input type="radio" name="q1" value="nao"><span>Não</span></label></div></fieldset>
+      <fieldset class="q"><legend>O tempo estimado sugerido foi condizente com a realidade da aula?</legend><div class="yn"><label><input type="radio" name="q2" value="sim"><span>Sim</span></label><label><input type="radio" name="q2" value="nao"><span>Não</span></label></div></fieldset>
+      <fieldset class="q"><legend>A atividade ajudou a fixar o conteúdo da disciplina?</legend><div class="yn"><label><input type="radio" name="q3" value="sim"><span>Sim</span></label><label><input type="radio" name="q3" value="nao"><span>Não</span></label></div></fieldset>
+      <button class="btn" type="submit">Enviar avaliação</button>
+      <p class="msg" id="msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

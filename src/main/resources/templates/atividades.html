@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atividades | Mundo MakerKids</title>
+<meta name="description" content="Todas as atividades de computação desplugada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: header('atividades')}"></div>
+
+<main class="wrap">
+  <div class="page-head">
+    <h1>Atividades</h1>
+    <p>Escolha pela matéria que você vai dar ou procure pelo nome.</p>
+  </div>
+  <div class="tools">
+    <div class="filters" role="group" aria-label="Filtrar por matéria">
+      <button type="button" data-f="todas" aria-pressed="true">Todas</button>
+      <button type="button" data-f="p" aria-pressed="false">Língua Portuguesa</button>
+      <button type="button" data-f="m" aria-pressed="false">Matemática</button>
+      <button type="button" data-f="f" aria-pressed="false">Folclore</button>
+    </div>
+    <input type="search" id="busca" placeholder="Buscar atividade" aria-label="Buscar atividade">
+  </div>
+  <p class="count" id="contagem" aria-live="polite"></p>
+  <div class="rows" id="lista">
+    <a th:each="a : ${atividades}"
+       th:href="@{'/atividades/' + ${a.slug}}"
+       th:attr="data-disc=${a.disciplina}"
+       class="row">
+      <h3 th:text="${a.titulo}"></h3>
+      <p th:text="${a.descricao}"></p>
+      <span class="chips">
+        <span th:class="'chip ' + ${a.disciplina}" th:text="${a.disciplinaLabel}"></span>
+        <span class="chip" th:text="${a.conceito}"></span>
+        <span class="chip" th:text="${a.tempoLabel}"></span>
+      </span>
+    </a>
+  </div>
+  <p class="vazio" id="vazio" hidden>Nenhuma atividade encontrada. Troque o filtro ou apague a busca.</p>
+</main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

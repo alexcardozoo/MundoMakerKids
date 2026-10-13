@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sobre o Projeto | Mundo MakerKids</title>
+<meta name="description" content="Conheça o projeto Mundo MakerKids e a equipe por trás dele.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: header('sobre')}"></div>
+
+<main>
+
+  <!-- Hero -->
+  <section class="sobre-hero sec-lousa">
+    <div class="wrap">
+      <div class="sobre-hero-inner">
+        <div>
+          <span class="tag-lousa">Sobre o projeto</span>
+          <h1>Computação também pode ser brincadeira.</h1>
+          <p class="lead">O Mundo MakerKids aproxima conceitos de programação do universo infantil por meio de atividades lúdicas, histórias e brincadeiras da cultura popular — sem precisar de computador.</p>
+        </div>
+        <div class="sobre-symbol" aria-hidden="true">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="44" height="44" fill="#F4D35E" stroke="#F3F1E4" stroke-width="2.5"/>
+            <rect x="66" y="10" width="44" height="44" fill="none" stroke="#F3F1E4" stroke-width="2.5"/>
+            <rect x="10" y="66" width="44" height="44" fill="none" stroke="#F3F1E4" stroke-width="2.5"/>
+            <rect x="66" y="66" width="44" height="44" fill="#F4D35E" stroke="#F3F1E4" stroke-width="2.5"/>
+            <text x="32" y="42" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="22" fill="#1E3A34">if</text>
+            <text x="88" y="42" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="22" fill="#F3F1E4">{}</text>
+            <text x="32" y="98" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="16" fill="#F3F1E4">loop</text>
+            <text x="88" y="98" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="16" fill="#1E3A34">algo</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proposta -->
+  <section class="sec">
+    <div class="wrap sobre-proposta">
+      <div>
+        <h2>Nossa proposta</h2>
+        <p>O projeto busca apresentar conceitos de Computação de maneira acessível e divertida, utilizando atividades que façam parte do universo das crianças entre 6 e 8 anos.</p>
+        <p style="margin-top:14px">A proposta é apoiar professores na aplicação dessas atividades em sala de aula, oferecendo roteiros organizados que estimulem a participação e a criatividade dos alunos.</p>
+      </div>
+      <div class="proposta-destaque">
+        <p class="destaque-num">13</p>
+        <p class="destaque-leg">atividades prontas para aplicar</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objetivos -->
+  <section class="sec">
+    <div class="wrap">
+      <h2>O que queremos proporcionar?</h2>
+      <p class="intro">Uma experiência de aprendizagem mais criativa, prática e divertida.</p>
+      <div class="objetivo-grid">
+        <div class="objetivo-card">
+          <div class="objetivo-icone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <h3>Estimular a criatividade</h3>
+          <p>Criar experiências que incentivem as crianças a pensar, experimentar e encontrar soluções.</p>
+        </div>
+        <div class="objetivo-card">
+          <div class="objetivo-icone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <h3>Aproximar a Computação</h3>
+          <p>Apresentar conceitos de Computação de maneira simples, lúdica e adequada ao universo infantil.</p>
+        </div>
+        <div class="objetivo-card">
+          <div class="objetivo-icone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Apoiar professores</h3>
+          <p>Facilitar o acesso a roteiros e orientações para aplicação das atividades em sala de aula.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <h2>Como funciona</h2>
+      <p class="intro">Uma plataforma pensada para facilitar o trabalho do professor.</p>
+      <div class="como-grid">
+        <div class="como-item">
+          <div class="como-num">01</div>
+          <div>
+            <h3>Explore</h3>
+            <p>Encontre atividades organizadas por matéria e tema.</p>
+          </div>
+        </div>
+        <div class="como-item">
+          <div class="como-num">02</div>
+          <div>
+            <h3>Escolha</h3>
+            <p>Conheça os objetivos, materiais e o passo a passo de cada roteiro.</p>
+          </div>
+        </div>
+        <div class="como-item">
+          <div class="como-num">03</div>
+          <div>
+            <h3>Aplique</h3>
+            <p>Leve a proposta para a sala de aula de forma prática e divertida.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Áreas -->
+  <section class="sec">
+    <div class="wrap">
+      <h2>Três caminhos para aprender.</h2>
+      <p class="intro">Cada atividade conecta um conceito de computação a uma matéria que a turma já conhece.</p>
+      <div class="areas-grid">
+        <div class="area-card p">
+          <h3>Língua Portuguesa</h3>
+          <p>Sequências, começo-meio-fim e decisões Se/Senão contadas em histórias.</p>
+          <span class="chip p">Se / Senão</span>
+        </div>
+        <div class="area-card m">
+          <h3>Matemática</h3>
+          <p>Padrões numércos viram algoritmos que a criança testa com o corpo.</p>
+          <span class="chip m">Sequência e depuração</span>
+        </div>
+        <div class="area-card f">
+          <h3>Folclore</h3>
+          <p>Cantigas e brincadeiras tradicionais ganham loops e condições.</p>
+          <span class="chip f">Repetição (loop)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipe -->
+  <section class="sec sec-lousa">
+    <div class="wrap">
+      <h2 style="color:#F3F1E4">A equipe</h2>
+      <p class="intro" style="color:#C8C5B3">Projeto de extensão do curso de Sistemas para Internet — 2026.</p>
+      <ul class="equipe-lista">
+        <li>Alex Cardozo</li>
+        <li>Fernando Feitosa</li>
+        <li>Iviane Santos</li>
+        <li>Sara Ribeiro</li>
+        <li>Vinicius Brito</li>
+      </ul>
+      <div style="margin-top:32px">
+        <a class="btn-giz" th:href="@{/atividades}">Ver as atividades</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>

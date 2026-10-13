@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mundo MakerKids: computação desplugada para a sala de aula</title>
+<meta name="description" content="Roteiros prontos de computação desplugada ligados a Português, Matemática e brincadeiras folclóricas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: header('inicio')}"></div>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Lógica de programação no pátio, sem computador.</h1>
+        <p class="lead">Roteiros prontos de Computação Desplugada que usam o que a turma já conhece: histórias, números e brincadeiras da cultura popular. Você abre, lê o passo a passo e aplica.</p>
+        <div class="acoes">
+          <a class="btn" th:href="@{/atividades}">Ver atividades</a>
+          <a class="link" href="#roteiro">O que tem em cada roteiro</a>
+        </div>
+      </div>
+      <div class="quadro">
+        <svg viewBox="0 0 250 410" role="img" aria-label="Amarelinha com as casas pares destacadas em amarelo">
+          <rect x="63.0" y="34" width="62" height="62" fill="#F4D35E" stroke="#F3F1E4" stroke-width="2.5"/>
+          <text x="94.0" y="74.0" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="26" fill="#1E3A34">8</text>
+          <rect x="125.0" y="34" width="62" height="62" fill="none" stroke="#F3F1E4" stroke-width="2.5"/>
+          <text x="156.0" y="74.0" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="26" fill="#F3F1E4">9</text>
+          <rect x="94.0" y="96" width="62" height="62" fill="none" stroke="#F3F1E4" stroke-width="2.5"/>
+          <text x="125.0" y="136.0" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="26" fill="#F3F1E4">7</text>
+          <rect x="63.0" y="158" width="62" height="62" fill="none" stroke="#F3F1E4" stroke-width="2.5"/>
+          <text x="94.0" y="198.0" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="26" fill="#F3F1E4">5</text>
+          <rect x="125.0" y="158" width="62" height="62" fill="#F4D35E" stroke="#F3F1E4" stroke-width="2.5"/>
+          <text x="156.0" y="198.0" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="26" fill="#1E3A34">6</text>
+          <rect x="94.0" y="220" width="62" height="62" fill="#F4D35E" stroke="#F3F1E4" stroke-width="2.5"/>
+          <text x="125.0" y="260.0" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="26" fill="#1E3A34">4</text>
+          <rect x="63.0" y="282" width="62" height="62" fill="#F4D35E" stroke="#F3F1E4" stroke-width="2.5"/>
+          <text x="94.0" y="322.0" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="26" fill="#1E3A34">2</text>
+          <rect x="125.0" y="282" width="62" height="62" fill="none" stroke="#F3F1E4" stroke-width="2.5"/>
+          <text x="156.0" y="322.0" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="26" fill="#F3F1E4">3</text>
+          <rect x="94.0" y="344" width="62" height="62" fill="none" stroke="#F3F1E4" stroke-width="2.5"/>
+          <text x="125.0" y="384.0" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="26" fill="#F3F1E4">1</text>
+          <path d="M70 34 A55 30 0 0 1 180 34 Z" fill="none" stroke="#F3F1E4" stroke-width="2.5"/>
+          <text x="125" y="26" text-anchor="middle" font-family="Atkinson Hyperlegible,sans-serif" font-size="14" fill="#F3F1E4">Céu</text>
+        </svg>
+        <p>Regra do jogo: só pisa em casa <b>par</b>. Pisou em ímpar? É um <b>bug</b>: volta ao início e tenta de novo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <h2>Cada atividade conversa com uma matéria da sua aula.</h2>
+      <div class="disc">
+        <div class="p">
+          <h3>Língua Portuguesa</h3>
+          <p>Histórias com começo, meio e fim viram sequências e decisões.</p>
+          <small>Conceito: Se / Senão</small>
+        </div>
+        <div class="m">
+          <h3>Matemática</h3>
+          <p>Padrões, pares e ímpares viram regras que a criança testa com o corpo.</p>
+          <small>Conceito: sequência e depuração</small>
+        </div>
+        <div class="f">
+          <h3>Brincadeiras folclóricas</h3>
+          <p>Cantigas e jogos tradicionais ganham repetição e condições.</p>
+          <small>Conceito: repetição</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="roteiro">
+    <div class="wrap">
+      <h2>Todo roteiro tem as mesmas quatro partes.</h2>
+      <p class="intro">Assim você encontra o que precisa em segundos, mesmo com a aula começando.</p>
+      <dl class="defs">
+        <div><dt>Objetivo de aprendizagem</dt><dd>O que a criança aprende na matéria e na lógica.</dd></div>
+        <div><dt>Tempo estimado</dt><dd>Quanto dura a dinâmica, para caber no seu horário.</dd></div>
+        <div><dt>Materiais</dt><dd>Só itens simples: giz, fita crepe, papel, copos.</dd></div>
+        <div><dt>Passo a passo</dt><dd>As regras do jogo, do início ao fim da brincadeira.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <h2>Comece por uma destas.</h2>
+      <div class="rows">
+        <a th:each="a : ${atividades}"
+           th:href="@{'/atividades/' + ${a.slug}}"
+           th:attr="data-disc=${a.disciplina}"
+           class="row">
+          <h3 th:text="${a.titulo}"></h3>
+          <p th:text="${a.descricao}"></p>
+          <span class="chips">
+            <span th:class="'chip ' + ${a.disciplina}" th:text="${a.disciplinaLabel}"></span>
+            <span class="chip" th:text="${a.conceito}"></span>
+            <span class="chip" th:text="${a.tempoLabel}"></span>
+          </span>
+        </a>
+      </div>
+      <p style="margin-top:22px"><a class="link" th:href="@{/atividades}">Ver todas as atividades</a></p>
+    </div>
+  </section>
+
+</main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>

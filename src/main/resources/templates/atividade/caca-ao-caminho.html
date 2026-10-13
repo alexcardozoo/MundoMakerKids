@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caça ao Caminho | Mundo MakerKids</title>
+<meta name="description" content="Com fita no chão e instruções escritas, a turma descobre que um robô precisa de direções absolutas, não de intenções.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: header('atividades')}"></div>
+
+<main class="wrap">
+  <a class="voltar" th:href="@{/atividades}">← Voltar para atividades</a>
+  <div class="ativ-head">
+    <span class="chip m">Matemática</span>
+    <h1>Caça ao Caminho</h1>
+    <p>Com fita no chão e instruções escritas, a turma descobre que um robô precisa de direções absolutas, não de intenções.</p>
+    <dl class="meta">
+      <div><dt>Conceito</dt><dd>Algoritmos e Direções</dd></div>
+      <div><dt>Tempo estimado</dt><dd>25 minutos</dd></div>
+      <div><dt>Idade</dt><dd>6 a 10 anos</dd></div>
+      <div><dt>Espaço</dt><dd>Sala ou pátio</dd></div>
+    </dl>
+    <div class="ativ-acoes">
+      <button class="btn-imprimir" onclick="window.print()" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Imprimir roteiro
+      </button>
+    </div>
+  </div>
+  <div class="layout">
+    <div>
+      <section>
+        <h2>Objetivo de aprendizagem</h2>
+        <p>Criar instruções de navegação claras e precisas em um grid físico. As crianças percebem que "vá para lá" não basta — um algoritmo precisa de quantidades e direções exatas para funcionar.</p>
+      </section>
+      <section>
+        <h2>Passo a passo</h2>
+        <ol class="passos">
+          <li><h3>Monte o grid</h3><p>Use fita crepe para criar uma grade de 5×5 no chão. Marque um ponto de partida e um tesouro (um objeto qualquer).</p></li>
+          <li><h3>Escreva as instruções</h3><p>Em grupos, os alunos escrevem um algoritmo para ir do ponto A ao tesouro usando apenas: "frente 1", "direita 1", "esquerda 1", "trás 1".</p></li>
+          <li><h3>Execute o algoritmo</h3><p>Um colega faz o papel do robô e segue as instruções escritas exatamente. Sem improvisar.</p></li>
+          <li><h3>Depure os erros</h3><p>Se o robô não chegar ao tesouro, o grupo identifica qual passo estava errado e corrige.</p></li>
+          <li><h3>Desafio extra</h3><p>Adicione obstáculos no caminho. Os grupos precisam reescrever o algoritmo desviando dos blocos.</p></li>
+        </ol>
+      </section>
+      <section>
+        <div class="dica">
+          <strong>Dica para o professor</strong>
+          Incentive os grupos a contarem os passos primeiro desenhando o caminho no papel antes de escrever as instruções.
+        </div>
+      </section>
+    </div>
+    <aside>
+      <div class="caixa">
+        <h2>Materiais</h2>
+        <ul>
+          <li><strong>Fita crepe</strong><span>Para criar o grid no chão.</span></li>
+          <li><strong>Objeto-tesouro</strong><span>Um brinquedo ou cone como destino.</span></li>
+          <li><strong>Papel e lápis</strong><span>Para escrever o algoritmo de navegação.</span></li>
+          <li><strong>Blocos de obstáculo</strong><span>Caixas ou garrafas para o desafio extra.</span></li>
+        </ul>
+      </div>
+      <div class="caixa conceito">
+        <h2>Conceito de computação</h2>
+        <p>Algoritmos de navegação precisam de direções e quantidades exatas. Um computador não interpreta intenções — executa comandos literais.</p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<section class="aval" aria-labelledby="aval-t">
+  <div class="wrap">
+    <h2 id="aval-t">Você aplicou esta atividade?</h2>
+    <p class="mudo">Responda Sim ou Não. Leva menos de um minuto e ajuda a melhorar os roteiros.</p>
+    <form id="aval" data-slug="caca-ao-caminho" novalidate>
+      <fieldset class="q"><legend>As instruções do roteiro foram claras e fáceis de entender?</legend><div class="yn"><label><input type="radio" name="q0" value="sim"><span>Sim</span></label><label><input type="radio" name="q0" value="nao"><span>Não</span></label></div></fieldset>
+      <fieldset class="q"><legend>Os alunos demonstraram engajamento durante a dinâmica?</legend><div class="yn"><label><input type="radio" name="q1" value="sim"><span>Sim</span></label><label><input type="radio" name="q1" value="nao"><span>Não</span></label></div></fieldset>
+      <fieldset class="q"><legend>O tempo estimado sugerido foi condizente com a realidade da aula?</legend><div class="yn"><label><input type="radio" name="q2" value="sim"><span>Sim</span></label><label><input type="radio" name="q2" value="nao"><span>Não</span></label></div></fieldset>
+      <fieldset class="q"><legend>A atividade ajudou a fixar o conteúdo da disciplina?</legend><div class="yn"><label><input type="radio" name="q3" value="sim"><span>Sim</span></label><label><input type="radio" name="q3" value="nao"><span>Não</span></label></div></fieldset>
+      <button class="btn" type="submit">Enviar avaliação</button>
+      <p class="msg" id="msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Montando Histórias | Mundo MakerKids</title>
+<meta name="description" content="Cartões embaralhados de uma história: a turma descobre que o texto tem um algoritmo — começo, meio e fim.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: header('atividades')}"></div>
+
+<main class="wrap">
+  <a class="voltar" th:href="@{/atividades}">← Voltar para atividades</a>
+  <div class="ativ-head">
+    <span class="chip p">Língua Portuguesa</span>
+    <h1>Montando Histórias</h1>
+    <p>Cartões embaralhados de uma história: a turma descobre que o texto tem um algoritmo — começo, meio e fim.</p>
+    <dl class="meta">
+      <div><dt>Conceito</dt><dd>Decomposição</dd></div>
+      <div><dt>Tempo estimado</dt><dd>30 minutos</dd></div>
+      <div><dt>Idade</dt><dd>6 a 10 anos</dd></div>
+      <div><dt>Espaço</dt><dd>Sala de aula</dd></div>
+    </dl>
+    <div class="ativ-acoes">
+      <button class="btn-imprimir" onclick="window.print()" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Imprimir roteiro
+      </button>
+    </div>
+  </div>
+  <div class="layout">
+    <div>
+      <section>
+        <h2>Objetivo de aprendizagem</h2>
+        <p>Decompor uma história em partes menores e identificar a lógica que une cada trecho. As crianças percebem que uma narrativa também é um algoritmo: se as partes estiverem fora de ordem, o resultado não faz sentido.</p>
+      </section>
+      <section>
+        <h2>Passo a passo</h2>
+        <ol class="passos">
+          <li><h3>Escolha a história</h3><p>Selecione um conto curto que a turma já conheça. Divida-o em 5 a 7 cenas principais e escreva ou desenhe cada uma em um cartão separado.</p></li>
+          <li><h3>Embaralhe e distribua</h3><p>Cada grupo recebe os cartões fora de ordem. Sem contar a história — só com as imagens ou os trechos curtos.</p></li>
+          <li><h3>Ordene as cenas</h3><p>O grupo discute e coloca os cartões na sequência que faz sentido. Justifiquem: por que esta cena vem antes daquela?</p></li>
+          <li><h3>Apresente e compare</h3><p>Cada grupo apresenta sua ordenação. Turmas diferentes podem chegar a ordens ligeiramente diferentes — discuta o que isso significa para a ambiguidade.</p></li>
+          <li><h3>Crie a própria história</h3><p>A turma cria uma história nova em cartões e passa para outro grupo tentar ordená-la.</p></li>
+        </ol>
+      </section>
+      <section>
+        <div class="dica">
+          <strong>Dica para o professor</strong>
+          Conecte com o conceito de "decomposição": a história grande foi dividida em partes menores para ser mais fácil de entender e reorganizar.
+        </div>
+      </section>
+    </div>
+    <aside>
+      <div class="caixa">
+        <h2>Materiais</h2>
+        <ul>
+          <li><strong>Cartões de cenas</strong><span>Um trecho ou ilustração por cartão.</span></li>
+          <li><strong>Conto impresso ou lido</strong><span>Uma história que a turma já conheça.</span></li>
+          <li><strong>Canetinhas e papel</strong><span>Para criar a história nova na etapa final.</span></li>
+        </ul>
+      </div>
+      <div class="caixa conceito">
+        <h2>Conceito de computação</h2>
+        <p>Decomposição é dividir um problema grande em partes menores para facilitar a análise e a solução. Uma história decomposta em cenas funciona da mesma forma.</p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<section class="aval" aria-labelledby="aval-t">
+  <div class="wrap">
+    <h2 id="aval-t">Você aplicou esta atividade?</h2>
+    <p class="mudo">Responda Sim ou Não. Leva menos de um minuto e ajuda a melhorar os roteiros.</p>
+    <form id="aval" data-slug="montando-historias" novalidate>
+      <fieldset class="q"><legend>As instruções do roteiro foram claras e fáceis de entender?</legend><div class="yn"><label><input type="radio" name="q0" value="sim"><span>Sim</span></label><label><input type="radio" name="q0" value="nao"><span>Não</span></label></div></fieldset>
+      <fieldset class="q"><legend>Os alunos demonstraram engajamento durante a dinâmica?</legend><div class="yn"><label><input type="radio" name="q1" value="sim"><span>Sim</span></label><label><input type="radio" name="q1" value="nao"><span>Não</span></label></div></fieldset>
+      <fieldset class="q"><legend>O tempo estimado sugerido foi condizente com a realidade da aula?</legend><div class="yn"><label><input type="radio" name="q2" value="sim"><span>Sim</span></label><label><input type="radio" name="q2" value="nao"><span>Não</span></label></div></fieldset>
+      <fieldset class="q"><legend>A atividade ajudou a fixar o conteúdo da disciplina?</legend><div class="yn"><label><input type="radio" name="q3" value="sim"><span>Sim</span></label><label><input type="radio" name="q3" value="nao"><span>Não</span></label></div></fieldset>
+      <button class="btn" type="submit">Enviar avaliação</button>
+      <p class="msg" id="msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>
