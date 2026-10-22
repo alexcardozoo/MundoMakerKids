@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${atividade.titulo} + ' | Mundo MakerKids'">Atividade</title>
+    <meta name="description" th:content="${atividade.descricao}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: header('atividades')}"></div>
+
+<main class="wrap">
+    <a class="voltar" th:href="@{/atividades}">← Voltar para atividades</a>
+    <div class="ativ-head">
+        <span th:class="'chip ' + ${atividade.disciplina}" th:text="${atividade.disciplinaLabel}"></span>
+        <h1 th:text="${atividade.titulo}"></h1>
+        <p th:text="${atividade.descricao}"></p>
+        <dl class="meta">
+            <div><dt>Conceito</dt><dd th:text="${atividade.conceito}"></dd></div>
+            <div><dt>Tempo estimado</dt><dd th:text="${atividade.tempoLabel}"></dd></div>
+            <div><dt>Idade</dt><dd th:text="${atividade.idade}"></dd></div>
+            <div><dt>Espaço</dt><dd th:text="${atividade.espaco}"></dd></div>
+        </dl>
+        <div class="ativ-acoes">
+            <button class="btn-imprimir" onclick="window.print()" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Imprimir roteiro
+            </button>
+        </div>
+    </div>
+
+    <div class="layout">
+        <div>
+            <section>
+                <h2>Objetivo de aprendizagem</h2>
+                <p th:utext="${atividade.objetivo}"></p>
+            </section>
+            <section>
+                <h2>Passo a passo</h2>
+                <div th:utext="${atividade.passosHtml}"></div>
+            </section>
+            <section th:if="${atividade.dica != null}">
+                <div class="dica">
+                    <strong>Dica para o professor</strong>
+                    <span th:utext="${atividade.dica}"></span>
+                </div>
+            </section>
+        </div>
+        <aside>
+            <div class="caixa">
+                <h2>Materiais</h2>
+                <div th:utext="${atividade.materiaisHtml}"></div>
+            </div>
+            <div class="caixa conceito">
+                <h2>Conceito de computação</h2>
+                <p th:utext="${atividade.conceitoDescricao}"></p>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<section class="aval" aria-labelledby="aval-t">
+    <div class="wrap">
+        <h2 id="aval-t">Você aplicou esta atividade?</h2>
+        <p class="mudo">Responda Sim ou Não. Leva menos de um minuto e ajuda a melhorar os roteiros.</p>
+        <form id="aval" th:data-slug="${atividade.slug}" novalidate>
+            <fieldset class="q"><legend>As instruções do roteiro foram claras e fáceis de entender?</legend><div class="yn"><label><input type="radio" name="q0" value="sim"><span>Sim</span></label><label><input type="radio" name="q0" value="nao"><span>Não</span></label></div></fieldset>
+            <fieldset class="q"><legend>Os alunos demonstraram engajamento durante a dinâmica?</legend><div class="yn"><label><input type="radio" name="q1" value="sim"><span>Sim</span></label><label><input type="radio" name="q1" value="nao"><span>Não</span></label></div></fieldset>
+            <fieldset class="q"><legend>O tempo estimado sugerido foi condizente com a realidade da aula?</legend><div class="yn"><label><input type="radio" name="q2" value="sim"><span>Sim</span></label><label><input type="radio" name="q2" value="nao"><span>Não</span></label></div></fieldset>
+            <fieldset class="q"><legend>A atividade ajudou a fixar o conteúdo da disciplina?</legend><div class="yn"><label><input type="radio" name="q3" value="sim"><span>Sim</span></label><label><input type="radio" name="q3" value="nao"><span>Não</span></label></div></fieldset>
+            <button class="btn" type="submit">Enviar avaliação</button>
+            <p class="msg" id="msg" role="status"></p>
+        </form>
+    </div>
+</section>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

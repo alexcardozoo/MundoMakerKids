@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Painel de Avaliações | Mundo MakerKids</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .admin-wrap { padding: 40px 0; }
+        .tabela-admin { width: 100%; border-collapse: collapse; margin-top: 24px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .tabela-admin th, .tabela-admin td { padding: 14px 16px; text-align: left; border-bottom: 1px solid #eee; font-size: 15px; }
+        .tabela-admin th { background-color: #1E3A34; color: #F3F1E4; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; }
+        .tabela-admin tr:hover { background-color: #f8f9fa; }
+        .tag-sim { display: inline-block; padding: 2px 8px; border-radius: 4px; background-color: #e8f5e9; color: #2e7d32; font-weight: bold; }
+        .tag-nao { display: inline-block; padding: 2px 8px; border-radius: 4px; background-color: #ffebee; color: #c62828; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: header('admin')}"></div>
+
+<main class="wrap admin-wrap">
+    <h1>Painel de Avaliações</h1>
+    <p>Respostas enviadas pelos professores após a aplicação das atividades em sala de aula.</p>
+
+    <table class="tabela-admin">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Atividade</th>
+            <th>Data de Envio</th>
+            <th>Q0 (Claras)</th>
+            <th>Q1 (Engajamento)</th>
+            <th>Q2 (Tempo)</th>
+            <th>Q3 (Fixação)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="a : ${avaliacoes}">
+            <td th:text="${a.id}">1</td>
+            <td><strong th:text="${a.atividadeSlug}">amarelinha</strong></td>
+            <td th:text="${#temporals.format(a.dataEnvio, 'dd/MM/yyyy HH:mm')}">21/10/2026 14:30</td>
+            <td><span th:text="${a.q0}" th:class="${a.q0 == 'sim' ? 'tag-sim' : 'tag-nao'}">sim</span></td>
+            <td><span th:text="${a.q1}" th:class="${a.q1 == 'sim' ? 'tag-sim' : 'tag-nao'}">sim</span></td>
+            <td><span th:text="${a.q2}" th:class="${a.q2 == 'sim' ? 'tag-sim' : 'tag-nao'}">sim</span></td>
+            <td><span th:text="${a.q3}" th:class="${a.q3 == 'sim' ? 'tag-sim' : 'tag-nao'}">sim</span></td>
+        </tr>
+        <tr th:if="${#lists.isEmpty(avaliacoes)}">
+            <td colspan="7" style="text-align: center; color: #666; padding: 32px;">Nenhuma avaliação registrada até o momento.</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>
